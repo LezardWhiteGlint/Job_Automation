@@ -1,2 +1,2 @@
 # Job_Automation
-# Some thing created for my job automation
+# Auto get daily revenue and compare them
