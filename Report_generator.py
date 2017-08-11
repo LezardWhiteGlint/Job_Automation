@@ -5,7 +5,7 @@ from openpyxl import Workbook
 wb = Workbook()
 import os
 from selenium import webdriver
-ptions = webdriver.ChromeOptions()
+options = webdriver.ChromeOptions()
 options.add_argument('headless')
 options.add_argument('window-size=800x600')
 driver=webdriver.Chrome(executable_path='/Users/lezardvaleth/Documents/Python/chromedriver',chrome_options=options)
