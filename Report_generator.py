@@ -5,11 +5,13 @@ from openpyxl import Workbook
 wb = Workbook()
 import os
 from selenium import webdriver
-ptions = webdriver.ChromeOptions()
-options.add_argument('headless')
-options.add_argument('window-size=800x600')
-driver=webdriver.Chrome(executable_path='/Users/lezardvaleth/Documents/Python/chromedriver',chrome_options=options)
-os.chdir('/Users/lezardvaleth/Documents/Python/Report')
+from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
+from pyvirtualdisplay import Display
+display = Display(visible=0, size=(1024,768))
+display.start()
+binary = FirefoxBinary('/root/firefox/firefox')
+driver=webdriver.Firefox(executable_path='/root/geckodriver',firefox_binary=binary)
+
 
 
 #determing date range
