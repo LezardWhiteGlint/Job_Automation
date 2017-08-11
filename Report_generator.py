@@ -5,7 +5,10 @@ from openpyxl import Workbook
 wb = Workbook()
 import os
 from selenium import webdriver
-driver = webdriver.Chrome(executable_path='/Users/lezardvaleth/Documents/Python/chromedriver')
+ptions = webdriver.ChromeOptions()
+options.add_argument('headless')
+options.add_argument('window-size=800x600')
+driver=webdriver.Chrome(executable_path='/Users/lezardvaleth/Documents/Python/chromedriver',chrome_options=options)
 os.chdir('/Users/lezardvaleth/Documents/Python/Report')
 
 
