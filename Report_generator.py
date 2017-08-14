@@ -14,6 +14,7 @@ driver=webdriver.Firefox(executable_path='/root/geckodriver',firefox_binary=bina
 
 
 
+
 #determing date range
 time_start = '2017-08-01'
 time_end = '2017-08-04'
