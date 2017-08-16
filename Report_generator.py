@@ -1,4 +1,7 @@
+#!/usr/bin/env python3
 #import and initiate driver
+import arrow
+import datetime
 import time
 import openpyxl
 from openpyxl import Workbook
@@ -12,11 +15,17 @@ driver=webdriver.Chrome(executable_path='/Users/lezardvaleth/Documents/Python/ch
 os.chdir('/Users/lezardvaleth/Documents/Python/Report')
 
 
+#use arrow to generate date automaticly
+backend_date = arrow.now() - datetime.timedelta(days=2)
+year = backend_date.format('YYYY')
+month = backend_date.format('MM')
+last_month = str(int(month)-1)
+
 #determing date range
-time_start = '2017-08-01'
-time_end = '2017-08-04'
-time_start_last_month = '2017-07-01'
-time_end_last_month = '2017-07-04'
+time_start = backend_date.format('YYYY-MM')+'-01'
+time_end = backend_date.format('YYYY-MM-DD')
+time_start_last_month = year+'-'+last_month+'-01'
+time_end_last_month = year+'-'+last_month+'-'+backend_date.format('DD')
 
 #get currency
 report = openpyxl.load_workbook('Report.xlsx')
